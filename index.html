@@ -1366,50 +1366,6 @@ function checkPwStrength(pw){
   bar.style.width=['0','33%','66%','100%'][s];
   bar.style.background=['#e8eaee','#e03520','#d4820a','#1d8a5a'][s];
 }
-function handleDrop(e){
-  e.preventDefault();
-  const file=e.dataTransfer.files[0];
-  if(file){const fi=document.getElementById('excel-input');const dt=new DataTransfer();dt.items.add(file);fi.files=dt.files;cargarExcel(fi);}
-}
-function cargarExcel(input){
-  const file=input.files[0];if(!file)return;
-  const msg=document.getElementById('upload-msg');
-  msg.innerHTML='<div class="alert alert-info">⏳ Procesando archivo...</div>';
-  const reader=new FileReader();
-  reader.onload=e=>{
-    try{
-      const wb=XLSX.read(e.target.result,{type:'array'});
-      if(!wb.SheetNames.includes('Resultados')||!wb.SheetNames.includes('Detalle'))
-        throw new Error('El archivo debe tener las hojas "Resultados" y "Detalle".');
-      const resRows=XLSX.utils.sheet_to_json(wb.Sheets['Resultados']);
-      const detRows=XLSX.utils.sheet_to_json(wb.Sheets['Detalle']);
-      // Build detail map — handle Febrero column shift gracefully
-      const detMap={};
-      for(const r of detRows){
-        const cond=r['Conductor']||'';const mes=r['Mes']||'';const año=+(r['Año']||2026);
-        if(!cond)continue;
-        detMap[cond+'|'+mes+'|'+año]=r;
-      }
-      const newRecords=[];
-      for(const r of resRows){
-        const cond=(r['Conductor']||'').toString().trim();
-        const mes=(r['Mes']||'').toString().trim();
-        const año=+(r['Año']||2026);
-        const acp=+(r['Criticidad Acumulada']||0);
-        const frec=+(r['Frecuencia']||0);
-        if(!cond||!mes)continue;
-        const det=detMap[cond+'|'+mes+'|'+año]||{};
-        newRecords.push({
-          c:cond,id:'',mes,año,acp,frec,
-          celular:+(det['Uso de Celular']||0),
-          distancia:+(det['Distancia Insegura']||0),
-          carril:+(det['Salida de Carril']||0),
-          sinCond:+(det['Sin Conductor']||0),
-          ojo:+(det['Ojo Cerrado']||0),
-          cinturon:+(det['No Usar Cinturones de Seguridad']||0),
-          colision:+(det['Colisión Frontal']||0),
-          bostezo:+(det['Bostezo']||0),
-          distraccion:+(det['Distracción Genérica']||0),
 function clearExtra(){
   // Ya no hay datos extra en localStorage - los datos vienen del Google Sheet
   document.getElementById('restore-msg').innerHTML='<div class="alert alert-info">ℹ Los datos de conductores viven en el Google Sheet ACP_Intervenciones (hojas Detalle y Resultados). Para actualizar recarga la página.</div>';
@@ -1435,8 +1391,7 @@ function restaurarRespaldo(input){
   reader.readAsText(file,'UTF-8');input.value='';
 }
 
-
-
+function renderAdminMonths(){
   const allPeriods=[...new Set(DATA.map(d=>d.año+'||'+d.mes))].sort((a,b)=>{
     const[ay,am]=a.split('||');const[by,bm]=b.split('||');
     return ay-by||MO[am]-MO[bm];
