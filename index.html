@@ -196,6 +196,58 @@ tbody tr:hover td{background:#fafbfc}
   .card-grid,.card-grid.three{grid-template-columns:1fr}
   .main{padding:18px 14px}
 }
+/* ── Skeleton loader ── */
+@keyframes shimmer{0%{background-position:-600px 0}100%{background-position:600px 0}}
+.sk{background:linear-gradient(90deg,#f0f2f5 25%,#e4e6ea 50%,#f0f2f5 75%);background-size:600px 100%;animation:shimmer 1.4s infinite;border-radius:6px}
+.sk-kpi{height:76px;border-radius:12px}
+.sk-bar{height:10px;margin-bottom:10px;width:100%}
+.sk-bar.w70{width:70%}
+.sk-bar.w50{width:50%}
+.sk-canvas{height:155px;border-radius:8px}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-bottom:18px}
+.sk-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.sk-card{background:#fff;border:1px solid #e8eaee;border-radius:12px;padding:18px 20px}
+/* ── CDO Panel ── */
+.cdo-header-bar{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e8eaee;border-radius:12px;padding:14px 20px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.cdo-progress-wrap{display:flex;align-items:center;gap:12px;flex:1}
+.cdo-progress-label{font-size:12px;color:#6b7080;white-space:nowrap}
+.cdo-progress-track{flex:1;height:8px;background:#f0f2f5;border-radius:4px;overflow:hidden;min-width:80px}
+.cdo-progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#1d8a5a,#3a6fd4);transition:width .5s ease}
+.cdo-progress-count{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#1a1d24;white-space:nowrap}
+.cdo-tabs{display:flex;gap:6px;margin-bottom:14px}
+.cdo-tab{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;padding:7px 16px;border-radius:8px;border:1px solid #e4e6ea;background:#fff;color:#6b7080;cursor:pointer;transition:all .12s}
+.cdo-tab.active{background:#eef4ff;border-color:#3a6fd4;color:#3a6fd4}
+.cdo-row{display:grid;grid-template-columns:32px 1fr 90px 110px 120px 160px auto;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:1px solid #e8eaee;border-radius:10px;margin-bottom:6px;transition:box-shadow .12s}
+.cdo-row:hover{box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.cdo-row.gestionado{background:#f6fdf9;border-color:#b8e8cc}
+.cdo-row.multi{background:#fffbe8;border-color:#f0d080}
+.cdo-rank{font-family:'JetBrains Mono',monospace;font-size:11px;color:#b0b5c0;text-align:center}
+.cdo-nombre{font-size:13px;font-weight:600;color:#1a1d24;line-height:1.3}
+.cdo-id{font-size:10px;color:#9ea3ae;font-family:'JetBrains Mono',monospace}
+.cdo-eventos{display:flex;flex-wrap:wrap;gap:3px}
+.cdo-ev-chip{font-size:9px;padding:1px 5px;border-radius:4px;background:#f0f2f5;color:#6b7080;font-family:'JetBrains Mono',monospace}
+.cdo-ev-chip.hi{background:#fde8e5;color:#c0291a}
+.cdo-estado-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px}
+.cdo-estado-badge.pendiente{background:#fef3e0;color:#b06000;border:1px solid #f8dda0}
+.cdo-estado-badge.gestionado{background:#e8f7ee;color:#1a7a4a;border:1px solid #b8e8cc}
+.cdo-estado-badge.multi{background:#fffbe0;color:#9a7a00;border:1px solid #f0d080}
+.cdo-btn-interv{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;padding:5px 12px;border-radius:7px;border:1px solid #b8e8cc;background:#f0fbf5;color:#1d8a5a;cursor:pointer;white-space:nowrap;transition:all .12s}
+.cdo-btn-interv:hover{background:#1d8a5a;color:#fff}
+.cdo-btn-interv.ya{border-color:#e4e6ea;background:#f8f9fa;color:#9ea3ae;cursor:pointer}
+.cdo-btn-interv.ya:hover{background:#3a6fd4;color:#fff;border-color:#3a6fd4}
+.cdo-empty{text-align:center;padding:48px 0;color:#b0b5c0}
+/* ── Alerta 3 días sin gestión ── */
+.alerta-3d{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;background:#fde8e5;color:#c0291a;border:1px solid #f8c8c3;margin-left:6px;animation:pulse-red 2s infinite}
+@keyframes pulse-red{0%,100%{opacity:1}50%{opacity:.6}}
+/* ── Notificación datos nuevos ── */
+.data-update-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:#1d8a5a;color:#fff;font-size:12px;font-weight:600;padding:8px 20px;text-align:center;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.data-update-bar:hover{background:#166b47}
+/* ── Ficha gráfico evolución ── */
+.ficha-chart-wrap{position:relative;height:140px;margin-top:8px}
+/* ── Log actividad ── */
+.log-row{display:grid;grid-template-columns:140px 100px 1fr 160px;gap:8px;padding:8px 0;border-bottom:1px solid #f0f2f5;font-size:11px;align-items:center}
+.log-row:last-child{border-bottom:none}
+.log-accion{font-weight:600;color:#3a6fd4}
 </style>
 </head>
 <body>
@@ -206,39 +258,80 @@ const EV_LABELS={colision:'Colisión frontal',distancia:'Distancia insegura',car
 
 // URL del backend (Google Apps Script). No es un secreto crítico pero
 // se centraliza aquí para facilitar actualización al hacer Nueva implementación.
-const API_URL='https://script.google.com/macros/s/AKfycbz1c6qXhkkYaBE3kOXHQauVSstxTIH1f5r02Cou6Yoo4YzwmTvUPk25TxT_cCWzHfI/exec';
+const API_URL='https://script.google.com/macros/s/AKfycbyDkXRrY-D-moxd5xdhTuKr8zYMAFR6u10wEMUw9z_d29gflP7DeJL0_5z9MP7yG4g/exec';
 
 let DATA=[];
-function loadData(callback){
-  // Mostrar estado de carga
+
+function showSkeleton(){
+  const d=document.getElementById('ej-dashboard');
+  if(!d)return;
+  d.innerHTML=`
+    <div class="sk-grid">${Array(6).fill('<div class="sk sk-kpi"></div>').join('')}</div>
+    <div class="sk-card-grid">
+      <div class="sk-card">${Array(8).fill('<div class="sk sk-bar"></div><div class="sk sk-bar w70" style="margin-bottom:16px"></div>').join('')}</div>
+      <div class="sk-card">${Array(8).fill('<div class="sk sk-bar w50"></div><div class="sk sk-bar" style="margin-bottom:16px"></div>').join('')}</div>
+    </div>
+    <div class="sk-card"><div class="sk sk-canvas"></div></div>`;
+}
+
+function parseRows(rows){
+  return rows.map(r=>({
+    c:r.c||'',id:r.id||'',mes:r.mes||'',año:Number(r.año)||0,
+    acp:Math.round(Number(r.acp)||0),frec:Number(r.frec)||0,
+    celular:Number(r.celular)||0,distancia:Number(r.distancia)||0,
+    carril:Number(r.carril)||0,sinCond:Number(r.sinCond)||0,
+    ojo:Number(r.ojo)||0,cinturon:Number(r.cinturon)||0,
+    colision:Number(r.colision)||0,bostezo:Number(r.bostezo)||0,
+    distraccion:Number(r.distraccion)||0,fumando:Number(r.fumando)||0,
+    camara:Number(r.camara)||0
+  }));
+}
+
+function loadData(callback, forceRefresh){
   const fb=document.getElementById('footer-data');
-  if(fb)fb.textContent='Cargando datos...';
+  const CACHE_KEY='acp_data_cache';
+  const CACHE_TS='acp_data_ts';
+  const CACHE_TTL=30*60*1000; // 30 minutos
+
+  // Mostrar caché local instantáneamente si existe
+  const cached=localStorage.getItem(CACHE_KEY);
+  const ts=Number(localStorage.getItem(CACHE_TS)||0);
+  const fresh=Date.now()-ts < CACHE_TTL;
+
+  if(cached && !forceRefresh){
+    try{
+      DATA=JSON.parse(cached);
+      if(fb)fb.textContent=([...new Set(DATA.map(d=>d.año+'|'+d.mes))].length)+' períodos · '+DATA.length+' registros (caché)';
+      if(callback)callback();
+      if(fresh)return; // caché vigente, no hace fetch
+    }catch(e){}
+  } else {
+    showSkeleton();
+    if(fb)fb.textContent='Cargando datos...';
+  }
+
+  // Fetch al servidor (siempre en background si hay caché, o blocking si no)
   fetch(API_URL+'?sheet=Detalle')
     .then(r=>r.json())
     .then(rows=>{
       if(!Array.isArray(rows)||rows.error)throw new Error(rows.error||'Respuesta inválida');
-      DATA=rows.map(r=>({
-        c:r.c||'',id:r.id||'',mes:r.mes||'',año:Number(r.año)||0,
-        acp:Math.round(Number(r.acp)||0),
-        frec:Number(r.frec)||0,
-        celular:Number(r.celular)||0,distancia:Number(r.distancia)||0,
-        carril:Number(r.carril)||0,sinCond:Number(r.sinCond)||0,
-        ojo:Number(r.ojo)||0,cinturon:Number(r.cinturon)||0,
-        colision:Number(r.colision)||0,bostezo:Number(r.bostezo)||0,
-        distraccion:Number(r.distraccion)||0,fumando:Number(r.fumando)||0,
-        camara:Number(r.camara)||0
-      }));
+      DATA=parseRows(rows);
+      localStorage.setItem(CACHE_KEY,JSON.stringify(DATA));
+      localStorage.setItem(CACHE_TS,String(Date.now()));
       if(fb)fb.textContent=([...new Set(DATA.map(d=>d.año+'|'+d.mes))].length)+' períodos · '+DATA.length+' registros';
       if(callback)callback();
     })
     .catch(err=>{
       console.error('Error cargando datos:',err);
-      if(fb)fb.textContent='⚠ Error al cargar datos — verifica la conexión';
+      if(!DATA.length && fb)fb.textContent='⚠ Error al cargar datos — verifica la conexión';
     });
 }
 function getID(nombre){const r=DATA.find(d=>d.c===nombre&&d.id);return r?r.id:'';}
 function condChip(nombre){const id=getID(nombre);return id?`<span class="id-chip">${id}</span>`:''}
 </script>
+<div class="data-update-bar" id="data-update-bar" onclick="recargarDesdeBarra()">
+  🔄 Hay datos nuevos disponibles en el servidor — Clic para actualizar
+</div>
 <div class="shell">
   <nav class="sidebar">
     <div class="logo">
@@ -255,6 +348,7 @@ function condChip(nombre){const id=getID(nombre);return id?`<span class="id-chip
     <div class="nav-section">
       <div class="nav-label">Gestión</div>
       <button class="nav-item" onclick="nav('reincidentes',this)"><span class="nav-dot"></span><span class="nav-icon">↺</span><span>Reincidentes</span></button>
+      <button class="nav-item" onclick="nav('cdo',this)" style="color:#1d8a5a"><span class="nav-dot" style="background:#b8e8cc"></span><span class="nav-icon">📞</span><span>Central CDO</span><span class="nav-badge" id="cdo-badge" style="background:#1d8a5a">0</span></button>
       <button class="nav-item" onclick="nav('intervenciones',this)"><span class="nav-dot"></span><span class="nav-icon">✦</span><span>Intervenciones</span><span class="nav-badge" id="interv-count">0</span></button>
       <button class="nav-item" onclick="nav('citaciones',this)"><span class="nav-dot"></span><span class="nav-icon">📋</span><span>Citaciones</span><span class="nav-badge" id="citac-count">0</span></button>
       <button class="nav-item" onclick="nav('ficha',this)"><span class="nav-dot"></span><span class="nav-icon">◉</span><span>Ficha conductor</span></button>
@@ -302,6 +396,9 @@ function condChip(nombre){const id=getID(nombre);return id?`<span class="id-chip
           <div class="card"><div class="card-title">Evolución ACP promedio por mes</div>
             <div style="height:155px;position:relative"><canvas id="ej-chart"></canvas></div>
           </div>
+        </div>
+        <div class="card-grid full">
+          <div class="card" id="ej-comparativo"></div>
         </div>
       </div>
     </div>
@@ -376,9 +473,125 @@ function condChip(nombre){const id=getID(nombre);return id?`<span class="id-chip
     </div>
 
     <!-- INTERVENCIONES -->
-    <div class="panel" id="p-intervenciones">
+    <!-- CENTRAL CDO -->
+    <div class="panel" id="p-cdo">
       <div class="page-header">
-        <div><div class="page-title">Intervenciones · Central de Operaciones</div><div class="page-sub">Registro de casos gestionados y compromisos</div></div>
+        <div>
+          <div class="page-title">📞 Central de Operaciones — CDO</div>
+          <div class="page-sub" id="cdo-sub">Gestión de intervenciones por criticidad</div>
+        </div>
+        <div class="header-controls">
+          <select id="cdo-mes-sel" onchange="renderCDO()" style="font-size:12px"></select>
+        </div>
+      </div>
+
+      <!-- Barra de progreso -->
+      <div class="cdo-header-bar">
+        <div class="cdo-progress-wrap">
+          <span class="cdo-progress-label">Progreso del mes:</span>
+          <div class="cdo-progress-track"><div class="cdo-progress-fill" id="cdo-prog-fill" style="width:0%"></div></div>
+          <span class="cdo-progress-count" id="cdo-prog-text">0 / 0</span>
+        </div>
+        <div style="display:flex;gap:8px;margin-left:20px">
+          <div style="text-align:center;padding:0 12px;border-left:1px solid #f0f2f5">
+            <div style="font-size:18px;font-weight:700;color:#e03520" id="cdo-cnt-critico">0</div>
+            <div style="font-size:9px;color:#9ea3ae;text-transform:uppercase;letter-spacing:.06em">Crítico</div>
+          </div>
+          <div style="text-align:center;padding:0 12px;border-left:1px solid #f0f2f5">
+            <div style="font-size:18px;font-weight:700;color:#d4820a" id="cdo-cnt-alto">0</div>
+            <div style="font-size:9px;color:#9ea3ae;text-transform:uppercase;letter-spacing:.06em">Alto</div>
+          </div>
+          <div style="text-align:center;padding:0 12px;border-left:1px solid #f0f2f5">
+            <div style="font-size:18px;font-weight:700;color:#3a6fd4" id="cdo-cnt-moderado">0</div>
+            <div style="font-size:9px;color:#9ea3ae;text-transform:uppercase;letter-spacing:.06em">Moderado</div>
+          </div>
+          <div style="text-align:center;padding:0 12px;border-left:1px solid #f0f2f5">
+            <div style="font-size:18px;font-weight:700;color:#1d8a5a" id="cdo-cnt-gestionado">0</div>
+            <div style="font-size:9px;color:#9ea3ae;text-transform:uppercase;letter-spacing:.06em">Gestionados</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs filtro -->
+      <div class="cdo-tabs">
+        <button class="cdo-tab" id="cdo-tab-todos" onclick="renderCDO('todos')">Todos</button>
+        <button class="cdo-tab active" id="cdo-tab-pendientes" onclick="renderCDO('pendientes')">⏳ Pendientes</button>
+        <button class="cdo-tab" id="cdo-tab-gestionados" onclick="renderCDO('gestionados')">✔ Gestionados</button>
+      </div>
+
+      <!-- Lista conductores -->
+      <div id="cdo-list"></div>
+    </div>
+
+    <!-- Modal CDO intervención -->
+    <div class="modal-overlay" id="cdo-modal-overlay">
+      <div class="modal">
+        <div class="modal-title">Registrar intervención CDO</div>
+        <div class="modal-sub" id="cdo-modal-sub">Central de Operaciones</div>
+        <div class="form-row">
+          <label class="form-label">Conductor</label>
+          <input type="text" class="form-input" id="cdo-m-conductor" readonly style="background:#f8f9fa;color:#6b7080">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Mes de referencia</label>
+          <input type="text" class="form-input" id="cdo-m-mes" readonly style="background:#f8f9fa;color:#6b7080">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div class="form-row">
+            <label class="form-label">Fecha</label>
+            <input type="date" class="form-input" id="cdo-m-fecha">
+          </div>
+          <div class="form-row">
+            <label class="form-label">Hora</label>
+            <input type="time" class="form-input" id="cdo-m-hora">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Operador responsable</label>
+          <select class="form-select" id="cdo-m-responsable">
+            <option value="">— Selecciona operador —</option>
+            <option>Andrés Pedraza</option>
+            <option>Carlos Rosales</option>
+            <option>Carlos Solano</option>
+            <option>Clelia Durango</option>
+            <option>Dayana Ramos</option>
+            <option>Edwin Giraldo</option>
+            <option>Erinson Cabrera</option>
+            <option>Jose González</option>
+            <option>Jose Perez</option>
+            <option>Juan Acosta</option>
+            <option>Lorenzo De Ávila</option>
+            <option>Sebastián Baquero</option>
+            <option>Michael Cortez</option>
+            <option>Ray Cantillo</option>
+            <option>Samuel Gutierrez</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Tipo de intervención</label>
+          <select class="form-select" id="cdo-m-tipo">
+            <option>Llamada de atención</option>
+            <option>Capacitación</option>
+            <option>Compromiso firmado</option>
+            <option>Suspensión preventiva</option>
+            <option>Seguimiento especial</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Observaciones</label>
+          <textarea class="form-textarea" id="cdo-m-obs" placeholder="Descripción de la gestión, compromisos adquiridos..."></textarea>
+        </div>
+        <div class="modal-actions">
+          <button class="btn-cancel" onclick="cerrarModalCDO()">Cancelar</button>
+          <button class="btn-save" onclick="guardarIntervencionCDO()">Guardar intervención</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERVENCIONES -->
+      <div class="page-header">
+        <div><div class="page-title">Intervenciones · Seguridad Vial</div><div class="page-sub">Registro de casos gestionados y compromisos</div></div>
         <div class="header-controls">
           <button class="btn btn-green btn-sm" onclick="abrirModal()">+ Nueva</button>
           <button class="btn btn-blue btn-sm" onclick="toggleImportInterv()">↑ Importar masivo</button>
@@ -416,7 +629,7 @@ function condChip(nombre){const id=getID(nombre);return id?`<span class="id-chip
     <!-- CITACIONES -->
     <div class="panel" id="p-citaciones">
       <div class="page-header">
-        <div><div class="page-title">Citaciones · Central de Operaciones</div><div class="page-sub">Registro de citaciones a conductores</div></div>
+        <div><div class="page-title">Citaciones · Administración de conductores</div><div class="page-sub">Registro de citaciones a conductores</div></div>
         <div class="header-controls">
           <button class="btn btn-green btn-sm" onclick="abrirModalCitacion()">+ Nueva citación</button>
           <button class="btn btn-blue btn-sm" onclick="exportarCSVCitaciones()">↓ Exportar Excel</button>
@@ -549,18 +762,25 @@ ACP Ojo = 609.9 × (138/1990) = 609.9 × 6.93% = 42.3
         <div class="glosario-item"><span class="glosario-term">ACP</span><span class="glosario-def">Análisis Conductual Proyectivo. Puntaje mensual de riesgo basado en eventos de telemetría. A mayor valor, mayor exposición al riesgo vial.</span></div>
         <div class="glosario-item"><span class="glosario-term">Criticidad Acumulada</span><span class="glosario-def">Sinónimo de puntaje ACP en las plataformas WIZENZ y MICHELIN.</span></div>
         <div class="glosario-item"><span class="glosario-term">Frecuencia</span><span class="glosario-def">Total de eventos de telemetría registrados por el conductor en el mes.</span></div>
-        <div class="glosario-item"><span class="glosario-term">Score Predictivo</span><span class="glosario-def">Índice 0–100 calculado por el tablero que estima la probabilidad de riesgo futuro del conductor.</span></div>
         <div class="glosario-item"><span class="glosario-term">Reincidente ↺</span><span class="glosario-def">Conductor que aparece en el ranking crítico en 2 o más meses del historial.</span></div>
         <div class="glosario-item"><span class="glosario-term">Intervenido ✦</span><span class="glosario-def">Conductor con al menos una intervención registrada por la Central de Operaciones.</span></div>
+        <div class="glosario-item"><span class="glosario-term">Intervención</span><span class="glosario-def">Acción de gestión realizada sobre un conductor: llamada de atención, capacitación, compromiso firmado, suspensión preventiva o seguimiento especial.</span></div>
+        <div class="glosario-item"><span class="glosario-term">Citación</span><span class="glosario-def">Convocatoria formal a un conductor para tratar situaciones de riesgo vial con registro de fecha, hora, lugar y resultado.</span></div>
         <div class="glosario-item"><span class="glosario-term">Colisión frontal</span><span class="glosario-def">Alerta ADAS por riesgo de colisión con vehículo u objeto adelante.</span></div>
         <div class="glosario-item"><span class="glosario-term">Salida de carril</span><span class="glosario-def">Alerta por cruce de línea de carril sin señalización de cambio intencional.</span></div>
         <div class="glosario-item"><span class="glosario-term">Distancia insegura</span><span class="glosario-def">Seguimiento a menos de la distancia mínima de seguridad respecto al vehículo de adelante.</span></div>
         <div class="glosario-item"><span class="glosario-term">Ojo cerrado / Bostezo</span><span class="glosario-def">Alertas DMS de fatiga y somnolencia detectadas por cámara de habitáculo.</span></div>
         <div class="glosario-item"><span class="glosario-term">Sin conductor</span><span class="glosario-def">Alerta DMS por ausencia detectada del conductor en el asiento con el vehículo en movimiento.</span></div>
         <div class="glosario-item"><span class="glosario-term">Uso de celular</span><span class="glosario-def">Alerta DMS por detección de uso de dispositivo móvil durante la conducción.</span></div>
+        <div class="glosario-item"><span class="glosario-term">Distracción genérica</span><span class="glosario-def">Alerta DMS por comportamiento distraído del conductor no clasificado en otra categoría específica.</span></div>
+        <div class="glosario-item"><span class="glosario-term">Conductor fumando</span><span class="glosario-def">Alerta DMS por detección de conducta de fumado durante la operación del vehículo.</span></div>
+        <div class="glosario-item"><span class="glosario-term">Cámara cubierta</span><span class="glosario-def">Alerta por obstrucción intencional o accidental del lente de la cámara DMS.</span></div>
+        <div class="glosario-item"><span class="glosario-term">ADAS</span><span class="glosario-def">Advanced Driver Assistance Systems. Sistemas de asistencia al conductor que detectan riesgos en el entorno del vehículo.</span></div>
+        <div class="glosario-item"><span class="glosario-term">DMS</span><span class="glosario-def">Driver Monitoring System. Sistema de monitoreo del conductor mediante cámara de habitáculo.</span></div>
         <div class="glosario-item"><span class="glosario-term">WIZENZ</span><span class="glosario-def">Plataforma de telemetría vehicular que registra eventos ADAS.</span></div>
         <div class="glosario-item"><span class="glosario-term">MICHELIN</span><span class="glosario-def">Plataforma de monitoreo DMS (sistema de monitoreo del conductor).</span></div>
-        <div class="glosario-item"><span class="glosario-term">CDO</span><span class="glosario-def">Central de Operaciones. Área responsable del seguimiento operativo e intervención a conductores críticos.</span></div>
+        <div class="glosario-item"><span class="glosario-term">CDO</span><span class="glosario-def">Central de Operaciones. Área responsable del seguimiento operativo e intervención a conductores de riesgo.</span></div>
+        <div class="glosario-item"><span class="glosario-term">Alerta 3 días</span><span class="glosario-def">Indicador en la Central CDO que señala conductores CRÍTICO o ALTO sin gestión registrada en los últimos 3 días del mes en curso.</span></div>
       </div>
       <div class="manual-section">
         <h3>🔢 Niveles de riesgo — Score Predictivo</h3>
@@ -585,6 +805,10 @@ ACP Ojo = 609.9 × (138/1990) = 609.9 × 6.93% = 42.3
           </div>
           <div id="admin-login-err" style="display:none" class="alert alert-error">Contraseña incorrecta. Inténtalo de nuevo.</div>
           <button class="btn-save" style="width:100%;margin-top:4px" onclick="adminLogin()">Ingresar</button>
+          <div id="admin-forgot-wrap" style="margin-top:10px;text-align:center">
+            <button onclick="olvidarPassword()" style="background:none;border:none;color:#9ea3ae;font-size:11px;cursor:pointer;text-decoration:underline">¿Olvidaste tu contraseña?</button>
+          </div>
+          <div id="admin-forgot-msg" style="margin-top:8px"></div>
         </div>
       </div>
       <div id="admin-panel" style="display:none">
@@ -595,7 +819,11 @@ ACP Ojo = 609.9 × (138/1990) = 609.9 × 6.93% = 42.3
         <div class="admin-section">
           <h3>📊 Fuente de datos</h3>
           <p style="font-size:12px;color:#6b7080;margin-bottom:10px">Los datos de conductores se cargan automáticamente desde el Google Sheet <strong>ACP_Intervenciones</strong> (hojas Detalle y Resultados) cada vez que se abre el panel.</p>
-          <button class="btn btn-blue" onclick="loadData(function(){initAll();renderAdminMonths();document.getElementById('reload-msg').innerHTML='<div class=\'alert alert-success\'>✓ Datos actualizados.</div>';setTimeout(()=>document.getElementById(\'reload-msg\').innerHTML=\'\',3000);})">↻ Recargar datos del servidor</button>
+          <button class="btn btn-blue" onclick="
+            localStorage.removeItem('acp_data_cache');
+            localStorage.removeItem('acp_data_ts');
+            fetch(API_URL,{method:'POST',body:JSON.stringify({action:'clearCache'})}).catch(()=>{});
+            loadData(function(){initAll();renderAdminMonths();document.getElementById('reload-msg').innerHTML='<div class=\'alert alert-success\'>✓ Datos actualizados desde el servidor.</div>';setTimeout(()=>document.getElementById(\'reload-msg\').innerHTML=\'\',3000);},true)">↻ Recargar datos del servidor</button>
           <div id="reload-msg" style="margin-top:8px"></div>
         </div>
         <div class="admin-section">
@@ -615,6 +843,17 @@ ACP Ojo = 609.9 × (138/1990) = 609.9 × 6.93% = 42.3
           </div>
           <div id="pw-msg" style="margin-top:10px"></div>
           <button class="btn-save" style="margin-top:12px" onclick="cambiarPassword()">Actualizar contraseña</button>
+        </div>
+        <div class="admin-section">
+          <h3>📋 Log de actividad</h3>
+          <p style="font-size:12px;color:#6b7080;margin-bottom:10px">Últimas acciones registradas por los operadores CDO. Los registros se guardan en la hoja <strong>Log</strong> del Google Sheet.</p>
+          <button class="btn btn-blue" onclick="cargarLog()" style="margin-bottom:10px">↻ Actualizar log</button>
+          <div id="admin-log-wrap">
+            <div class="log-row" style="font-weight:600;color:#9ea3ae;font-size:10px;text-transform:uppercase;letter-spacing:.06em">
+              <div>Fecha / Hora</div><div>Operador</div><div>Acción</div><div>Conductor</div>
+            </div>
+            <div id="admin-log-list"><p style="font-size:12px;color:#9ea3ae">Clic en "Actualizar log" para cargar.</p></div>
+          </div>
         </div>
         <div class="admin-section">
           <h3>💾 Respaldo y restauración</h3>
@@ -1016,6 +1255,7 @@ function renderEjecutivo(){
   const meses=getMonths();
   const avgs=meses.map(m=>{const md=DATA.filter(d=>d.mes===m);return Math.round(md.reduce((s,d)=>s+d.acp,0)/md.length);});
   mkChart('ej-chart','line',{labels:meses,datasets:[{label:'ACP',data:avgs,borderColor:'#e03520',backgroundColor:'rgba(224,53,32,.07)',borderWidth:2,pointRadius:4,pointBackgroundColor:'#e03520',tension:.4,fill:true}]},{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#b0b5c0',font:{size:11}},grid:{color:'#f0f2f5'}},y:{ticks:{color:'#b0b5c0',font:{size:10}},grid:{color:'#f0f2f5'}}}});
+  renderComparativo();
 }
 
 // ══════════════════════════════════════════════
@@ -1248,14 +1488,28 @@ function renderFicha(){
   const ev=evLabeled(last);const evSort=Object.entries(ev).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);const mxEv=evSort[0]?.[1]||1;
   let histHtml='';
   if(rows.length>1){
-    const mxA=Math.max(...acps);
-    histHtml=`<div class="card" style="margin-bottom:14px"><div class="card-title">Evolución mensual</div>
-      ${rows.map(r=>`<div class="h-bar-row"><div class="h-bar-meta">
-        <span><span class="b-mes ${mc(r.mes)}" style="margin-right:6px">${r.mes} ${r.año}</span>
-        <span style="color:#9ea3ae;font-size:11px">ACP ${r.acp} · Frec. ${r.frec.toLocaleString()}</span></span>
-        <span class="h-bar-val">${r.acp}</span></div>
-        <div class="h-bar-track"><div class="h-bar-fill" style="width:${Math.round(r.acp/mxA*100)}%;background:${scoreColor(calcScore(r))}"></div></div>
-      </div>`).join('')}</div>`;
+    const chartId='ficha-chart-'+Date.now();
+    // Calcular deltas de eventos entre último y penúltimo mes
+    const prev=rows[rows.length-2];
+    const evKeys=['celular','distancia','carril','sinCond','ojo','cinturon','colision','bostezo','distraccion','fumando','camara'];
+    const EV_NAMES={celular:'Celular',distancia:'Distancia',carril:'Carril',sinCond:'Sin Conductor',ojo:'Ojo cerrado',cinturon:'Cinturón',colision:'Colisión',bostezo:'Bostezo',distraccion:'Distracción',fumando:'Fumando',camara:'Cámara'};
+    const deltas=evKeys.map(k=>({k,name:EV_NAMES[k],d:(last[k]||0)-(prev[k]||0)})).filter(x=>x.d!==0).sort((a,b)=>Math.abs(b.d)-Math.abs(a.d)).slice(0,4);
+    const deltaHtml=deltas.length?`<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px">${deltas.map(x=>`<span style="font-size:10px;padding:2px 8px;border-radius:10px;background:${x.d>0?'#fde8e5':'#e8f7ee'};color:${x.d>0?'#c0291a':'#1a7a4a'};font-weight:600">${x.d>0?'▲':'▼'} ${x.name}: ${Math.abs(x.d)}</span>`).join('')}</div>`:'';
+    histHtml=`<div class="card" style="margin-bottom:14px">
+      <div class="card-title">Evolución ACP mensual ${deltaHtml?'<span style="font-size:10px;color:#9ea3ae;font-weight:400;margin-left:6px">vs mes anterior</span>':''}</div>
+      <div class="ficha-chart-wrap"><canvas id="${chartId}"></canvas></div>
+      ${deltaHtml}
+    </div>
+    <script>
+    (function(){
+      const ctx=document.getElementById('${chartId}');
+      if(!ctx)return;
+      const labels=${JSON.stringify(rows.map(r=>r.mes.slice(0,3)+' '+r.año))};
+      const vals=${JSON.stringify(rows.map(r=>r.acp))};
+      const colors=vals.map(v=>v>=75?'#e03520':v>=50?'#d4820a':v>=25?'#3a6fd4':'#1d8a5a');
+      new Chart(ctx,{type:'bar',data:{labels,datasets:[{data:vals,backgroundColor:colors,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'ACP: '+ctx.raw}}},scales:{x:{ticks:{color:'#b0b5c0',font:{size:10}},grid:{display:false}},y:{ticks:{color:'#b0b5c0',font:{size:10}},grid:{color:'#f0f2f5'},beginAtZero:true,max:100}}}});
+    })();
+    \x3c/script>`;
   }
   const dotCls={Intervenido:'dot-intervenido','En seguimiento':'dot-seguimiento',Pendiente:'dot-pendiente',Cerrado:'dot-critico'};
   const intervHtml=intervs.length
@@ -1360,8 +1614,28 @@ function cambiarPassword(){
     })
     .catch(()=>{msg.innerHTML='<div class="alert alert-error">Error de conexión. Intenta de nuevo.</div>';});
 }
-function checkPwStrength(pw){
-  const bar=document.getElementById('pw-strength-bar');
+function olvidarPassword(){
+  const msg=document.getElementById('admin-forgot-msg');
+  const btn=event.target;
+  btn.disabled=true;btn.textContent='Enviando...';
+  fetch(API_URL,{method:'POST',body:JSON.stringify({action:'forgotPassword'})})
+    .then(r=>r.json())
+    .then(res=>{
+      btn.disabled=false;btn.textContent='¿Olvidaste tu contraseña?';
+      if(res.ok){
+        msg.innerHTML='<div class="alert alert-success">✓ Se envió la contraseña al correo del administrador.</div>';
+      } else {
+        msg.innerHTML='<div class="alert alert-error">Error al enviar. Intenta de nuevo.</div>';
+      }
+      setTimeout(()=>msg.innerHTML='',5000);
+    })
+    .catch(()=>{
+      btn.disabled=false;btn.textContent='¿Olvidaste tu contraseña?';
+      msg.innerHTML='<div class="alert alert-error">Sin conexión al servidor.</div>';
+      setTimeout(()=>msg.innerHTML='',4000);
+    });
+}
+
   const s=pw.length>=10&&/[A-Z]/.test(pw)&&/[0-9]/.test(pw)?3:pw.length>=6?2:pw.length>=3?1:0;
   bar.style.width=['0','33%','66%','100%'][s];
   bar.style.background=['#e8eaee','#e03520','#d4820a','#1d8a5a'][s];
@@ -1585,6 +1859,7 @@ function nav(name,btn){
   if(name==='tendencia')renderTendencia();
   if(name==='ranking')renderRanking();
   if(name==='reincidentes')renderReincidentes();
+  if(name==='cdo')renderCDO();
   if(name==='intervenciones')renderIntervenciones();
   if(name==='citaciones')renderCitaciones();
   if(name==='ficha')renderFicha();
@@ -1603,14 +1878,323 @@ function initAll(){
   initMS('rank-mes',meses,renderRanking,'rank-mes-btn','ms-rank-mes');
   initMS('reinc-año',años,renderReincidentes,'reinc-año-btn','ms-reinc-año');
   initMS('reinc-mes',meses,renderReincidentes,'reinc-mes-btn','ms-reinc-mes');
+  // Reset selector CDO para que se repopule con nuevos meses
+  const cdoSel=document.getElementById('cdo-mes-sel');
+  if(cdoSel)cdoSel.innerHTML='';
   renderEjecutivo();
   updateIntervBadge();
   updateCitacBadge();
+  updateCDOBadge();
   document.getElementById('footer-data').textContent=([...new Set(DATA.map(d=>d.año+'|'+d.mes))].length)+' períodos · '+DATA.length+' registros';
 }
 
-loadInterv();loadCitaciones();
+// ══════════════════════════════════════════════
+// CENTRAL CDO
+// ══════════════════════════════════════════════
+let _cdoTab='pendientes';
+
+function cdoGetMeses(){
+  return getMonths();
+}
+
+function cdoMesActual(){
+  const meses=cdoGetMeses();
+  return meses[meses.length-1]||'';
+}
+
+function cdoIntervencionesDeConductor(conductor, mes){
+  return INTERVENCIONES.filter(x=>x.conductor===conductor && x.mes===mes);
+}
+
+function updateCDOBadge(){
+  const mes=cdoMesActual();
+  const conductores=[...new Map(DATA.filter(d=>d.mes===mes).map(d=>[d.c,d])).values()];
+  const gestionados=conductores.filter(d=>cdoIntervencionesDeConductor(d.c,mes).length>0).length;
+  const pendientes=conductores.length-gestionados;
+  const el=document.getElementById('cdo-badge');
+  if(el)el.textContent=pendientes>0?pendientes:'✓';
+}
+
+function renderCDO(tab){
+  if(tab)_cdoTab=tab;
+
+  // Poblar selector de mes
+  const meses=cdoGetMeses();
+  const sel=document.getElementById('cdo-mes-sel');
+  if(sel && sel.options.length===0){
+    meses.forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=m;sel.appendChild(o);});
+    sel.value=cdoMesActual();
+  }
+  const mes=sel?sel.value:cdoMesActual();
+
+  // Datos del mes seleccionado ordenados por ACP desc
+  const conductores=[...new Map(DATA.filter(d=>d.mes===mes).map(d=>[d.c,d])).values()]
+    .sort((a,b)=>b.acp-a.acp);
+
+  // Contadores
+  const critico=conductores.filter(d=>d.acp>=75).length;
+  const alto=conductores.filter(d=>d.acp>=50&&d.acp<75).length;
+  const moderado=conductores.filter(d=>d.acp<50).length;
+  const gestionados=conductores.filter(d=>cdoIntervencionesDeConductor(d.c,mes).length>0).length;
+  const total=conductores.length;
+
+  // Actualizar contadores header
+  document.getElementById('cdo-cnt-critico').textContent=critico;
+  document.getElementById('cdo-cnt-alto').textContent=alto;
+  document.getElementById('cdo-cnt-moderado').textContent=moderado;
+  document.getElementById('cdo-cnt-gestionado').textContent=gestionados;
+  document.getElementById('cdo-prog-text').textContent=gestionados+' / '+total;
+  const pct=total>0?Math.round(gestionados/total*100):0;
+  document.getElementById('cdo-prog-fill').style.width=pct+'%';
+  document.getElementById('cdo-sub').textContent='Mes: '+mes+' · '+total+' conductores · '+pct+'% gestionados';
+
+  // Tabs activos
+  ['todos','pendientes','gestionados'].forEach(t=>{
+    const el=document.getElementById('cdo-tab-'+t);
+    if(el)el.classList.toggle('active',t===_cdoTab);
+  });
+
+  // Filtrar según tab
+  let lista=conductores;
+  if(_cdoTab==='pendientes') lista=conductores.filter(d=>cdoIntervencionesDeConductor(d.c,mes).length===0);
+  if(_cdoTab==='gestionados') lista=conductores.filter(d=>cdoIntervencionesDeConductor(d.c,mes).length>0);
+
+  const container=document.getElementById('cdo-list');
+  if(!lista.length){
+    container.innerHTML=`<div class="cdo-empty">
+      <div style="font-size:28px;margin-bottom:8px">${_cdoTab==='gestionados'?'📋':'✅'}</div>
+      <div style="font-size:13px;font-weight:500">${_cdoTab==='pendientes'?'¡Todos los conductores han sido gestionados este mes!':_cdoTab==='gestionados'?'Aún no hay intervenciones registradas.':'No hay conductores para este mes.'}</div>
+    </div>`;
+    return;
+  }
+
+  // Top eventos del conductor
+  function topEventos(d){
+    const ev={celular:d.celular,distancia:d.distancia,carril:d.carril,colision:d.colision,ojo:d.ojo,sinCond:d.sinCond,bostezo:d.bostezo,cinturon:d.cinturon,distraccion:d.distraccion,fumando:d.fumando,camara:d.camara};
+    return Object.entries(ev).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).slice(0,4);
+  }
+
+  const rankBase=conductores.findIndex; // para ranking global
+  container.innerHTML=lista.map((d,i)=>{
+    const rankGlobal=conductores.indexOf(d)+1;
+    const intervs=cdoIntervencionesDeConductor(d.c,mes);
+    const tieneInterv=intervs.length>0;
+    const esMulti=intervs.length>1;
+    const sl=scoreLabel(d.acp);
+    const evs=topEventos(d);
+    const rowCls=esMulti?'cdo-row multi':tieneInterv?'cdo-row gestionado':'cdo-row';
+
+    const alerta3d=tieneAlerta3Dias(d.c,mes);
+    const estadoBadge=esMulti
+      ?`<span class="cdo-estado-badge multi">✦ ${intervs.length} gestiones</span>`
+      :tieneInterv
+        ?`<span class="cdo-estado-badge gestionado">✔ Gestionado</span>`
+        :`<span class="cdo-estado-badge pendiente">⏳ Pendiente</span>`;
+
+    const btnLabel=tieneInterv?'+ Otra gestión':'✆ Intervenir';
+    const btnCls=tieneInterv?'cdo-btn-interv ya':'cdo-btn-interv';
+
+    const evChips=evs.map(([k,v])=>{
+      const isTop=evs[0][0]===k;
+      return`<span class="cdo-ev-chip${isTop?' hi':''}">${EV_LABELS[k]}: ${v}</span>`;
+    }).join('');
+
+    return`<div class="${rowCls}">
+      <div class="cdo-rank">#${rankGlobal}</div>
+      <div>
+        <div class="cdo-nombre">${d.c}${alerta3d?'<span class="alerta-3d">⚠ +3 días sin gestión</span>':''}</div>
+        <div class="cdo-id">${d.id||'Sin ID'}</div>
+      </div>
+      <div>
+        <span class="badge ${sl.cls}">${sl.t}</span>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;margin-top:3px;color:${scoreColor(d.acp)}">${d.acp}</div>
+      </div>
+      <div class="cdo-eventos">${evChips||'<span style="font-size:10px;color:#b0b5c0">Sin eventos</span>'}</div>
+      <div>${estadoBadge}${tieneInterv?`<div style="font-size:10px;color:#9ea3ae;margin-top:3px">${intervs[intervs.length-1].responsable||''}</div>`:''}</div>
+      <div style="font-size:10px;color:#9ea3ae;line-height:1.5">${tieneInterv?intervs.map(x=>`${x.tipo}<br>`).join(''):'—'}</div>
+      <button class="${btnCls}" onclick="abrirModalCDO('${d.c.replace(/'/g,"\\'")}','${mes}')">${btnLabel}</button>
+    </div>`;
+  }).join('');
+
+  updateCDOBadge();
+}
+
+function abrirModalCDO(conductor, mes){
+  const now=new Date();
+  document.getElementById('cdo-m-conductor').value=conductor;
+  document.getElementById('cdo-m-mes').value=mes;
+  document.getElementById('cdo-m-fecha').value=hoy();
+  document.getElementById('cdo-m-hora').value=now.toTimeString().slice(0,5);
+  document.getElementById('cdo-m-obs').value='';
+  document.getElementById('cdo-m-responsable').value='';
+  document.getElementById('cdo-m-tipo').value='Llamada de atención';
+  document.getElementById('cdo-modal-sub').textContent='Intervención — '+conductor;
+  document.getElementById('cdo-modal-overlay').classList.add('open');
+}
+
+function cerrarModalCDO(){
+  document.getElementById('cdo-modal-overlay').classList.remove('open');
+}
+
+function guardarIntervencionCDO(){
+  const conductor=document.getElementById('cdo-m-conductor').value;
+  const mes=document.getElementById('cdo-m-mes').value;
+  const fecha=document.getElementById('cdo-m-fecha').value;
+  const hora=document.getElementById('cdo-m-hora').value;
+  const responsable=document.getElementById('cdo-m-responsable').value;
+  const tipo=document.getElementById('cdo-m-tipo').value;
+  const obs=document.getElementById('cdo-m-obs').value.trim();
+
+  if(!responsable){alert('Selecciona el operador responsable.');return;}
+  if(!fecha){alert('Ingresa la fecha.');return;}
+
+  const record={
+    id:Date.now(),conductor,mes,
+    fecha,
+    responsable,tipo,
+    estado:'Intervenido',
+    obs:obs+(hora?' ['+hora+']':''),
+    creado:new Date().toISOString()
+  };
+
+  INTERVENCIONES.push(record);
+  saveInterv();
+  registrarLog(responsable, tipo, conductor, obs.slice(0,60));
+  cerrarModalCDO();
+  renderCDO();
+  renderIntervenciones();
+  updateIntervBadge();
+  updateCDOBadge();
+
+  if(API_URL){
+    fetch(API_URL,{method:'POST',body:JSON.stringify({action:'add',record})}).catch(()=>{});
+  }
+}
+
+// ══════════════════════════════════════════════
+// LOG DE ACTIVIDAD
+// ══════════════════════════════════════════════
+function registrarLog(operador, accion, conductor, detalle){
+  if(!API_URL) return;
+  const now=new Date();
+  const entry={
+    fecha: now.toLocaleDateString('es-CO'),
+    hora:  now.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'}),
+    operador, accion, conductor, detalle
+  };
+  fetch(API_URL,{method:'POST',body:JSON.stringify({action:'saveLog',data:entry})}).catch(()=>{});
+}
+
+function cargarLog(){
+  const wrap=document.getElementById('admin-log-list');
+  wrap.innerHTML='<p style="font-size:12px;color:#9ea3ae">Cargando...</p>';
+  fetch(API_URL+'?sheet=Log')
+    .then(r=>r.json())
+    .then(rows=>{
+      if(!Array.isArray(rows)||!rows.length){
+        wrap.innerHTML='<p style="font-size:12px;color:#9ea3ae">No hay registros aún.</p>';return;
+      }
+      const sorted=[...rows].reverse().slice(0,50);
+      wrap.innerHTML=sorted.map(r=>`<div class="log-row">
+        <div style="font-family:'JetBrains Mono',monospace;color:#6b7080">${r.fecha||''} ${r.hora||''}</div>
+        <div style="font-weight:600;color:#1a1d24">${r.operador||'—'}</div>
+        <div class="log-accion">${r.accion||'—'} <span style="color:#9ea3ae;font-weight:400">${r.detalle||''}</span></div>
+        <div style="color:#6b7080">${r.conductor||'—'}</div>
+      </div>`).join('');
+    })
+    .catch(()=>{wrap.innerHTML='<p style="font-size:12px;color:#e03520">Error al cargar el log.</p>';});
+}
+
+// ══════════════════════════════════════════════
+// NOTIFICACIÓN DATOS NUEVOS (cada 60 min)
+// ══════════════════════════════════════════════
+function iniciarVerificacionDatos(){
+  setInterval(()=>{
+    const ts=Number(localStorage.getItem('acp_data_ts')||0);
+    fetch(API_URL+'?sheet=Resultados&check=1')
+      .then(r=>r.json())
+      .then(rows=>{
+        if(!Array.isArray(rows)||!rows.length) return;
+        // Comparar conteo como proxy de cambio
+        const cacheKey='acp_data_count';
+        const prevCount=Number(localStorage.getItem(cacheKey)||0);
+        if(prevCount && rows.length!==prevCount){
+          document.getElementById('data-update-bar').style.display='block';
+        }
+        localStorage.setItem(cacheKey,String(rows.length));
+      }).catch(()=>{});
+  }, 60*60*1000); // cada hora
+}
+
+function recargarDesdeBarra(){
+  document.getElementById('data-update-bar').style.display='none';
+  localStorage.removeItem('acp_data_cache');
+  localStorage.removeItem('acp_data_ts');
+  fetch(API_URL,{method:'POST',body:JSON.stringify({action:'clearCache'})}).catch(()=>{});
+  loadData(function(){initAll();});
+}
+
+// ══════════════════════════════════════════════
+// ALERTA 3 DÍAS SIN GESTIÓN (CDO)
+// ══════════════════════════════════════════════
+function tieneAlerta3Dias(conductor, mes){
+  const intervs=INTERVENCIONES.filter(x=>x.conductor===conductor && x.mes===mes);
+  if(intervs.length>0) return false; // ya fue intervenido
+  // Ver si han pasado 3+ días desde el inicio del mes actual
+  const hoyDate=new Date();
+  const mesActualStr=hoyDate.toLocaleString('es-CO',{month:'long'}).replace(/^\w/,c=>c.toUpperCase());
+  if(mes!==mesActualStr) return false; // solo aplica al mes en curso
+  return hoyDate.getDate()>3;
+}
+
+// ══════════════════════════════════════════════
+// COMPARATIVO EJECUTIVO (mes actual vs anterior)
+// ══════════════════════════════════════════════
+function renderComparativo(){
+  const meses=getMonths();
+  if(meses.length<2) return;
+  const mesAct=meses[meses.length-1];
+  const mesAnt=meses[meses.length-2];
+  const dAct=DATA.filter(d=>d.mes===mesAct);
+  const dAnt=DATA.filter(d=>d.mes===mesAnt);
+  const avgAcp=arr=>arr.length?Math.round(arr.reduce((s,d)=>s+d.acp,0)/arr.length):0;
+  const criticos=arr=>arr.filter(d=>d.acp>=75).length;
+  const act={acp:avgAcp(dAct),crit:criticos(dAct),total:dAct.length};
+  const ant={acp:avgAcp(dAnt),crit:criticos(dAnt),total:dAnt.length};
+  const diff=(a,b,invert)=>{
+    const d=a-b; if(d===0) return '<span style="color:#9ea3ae">—</span>';
+    const up=invert?d<0:d>0;
+    return`<span style="color:${up?'#e03520':'#1d8a5a'};font-size:11px;font-weight:700">${d>0?'▲':'▼'} ${Math.abs(d)}</span>`;
+  };
+  const el=document.getElementById('ej-comparativo');
+  if(!el) return;
+  el.innerHTML=`
+    <div class="card-title">Comparativo ${mesAct} vs ${mesAnt}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:6px">
+      <div style="text-align:center">
+        <div style="font-size:10px;color:#9ea3ae;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">ACP Promedio</div>
+        <div style="font-size:22px;font-weight:700;color:#1a1d24">${act.acp}</div>
+        <div style="font-size:11px;color:#9ea3ae">${ant.acp} mes ant. ${diff(act.acp,ant.acp,true)}</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:10px;color:#9ea3ae;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Conductores Críticos</div>
+        <div style="font-size:22px;font-weight:700;color:#e03520">${act.crit}</div>
+        <div style="font-size:11px;color:#9ea3ae">${ant.crit} mes ant. ${diff(act.crit,ant.crit,true)}</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:10px;color:#9ea3ae;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Total Conductores</div>
+        <div style="font-size:22px;font-weight:700;color:#1a1d24">${act.total}</div>
+        <div style="font-size:11px;color:#9ea3ae">${ant.total} mes ant. ${diff(act.total,ant.total,false)}</div>
+      </div>
+    </div>`;
+}
+
+// ── Arranque global ───────────────────────────
+loadInterv();
+loadCitaciones();
 loadData(function(){initAll();renderAdminMonths();});
+iniciarVerificacionDatos();
+
 </script>
 </body>
 </html>
